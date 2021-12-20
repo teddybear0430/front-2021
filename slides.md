@@ -51,7 +51,7 @@ h1 {
 # フロントエンド開発に必要な基本技術
 - HTML
 - CSS
-- JavaScript
+- JavaScript（TypeScript）
 
 <p>HTMLでマークアップを行い、CSSで見た目を調整して、JavaScriptでプログラムを書くという基本的な構成要素は変わっていない。</p>
 <p>フロントエンドに関しては、今年も来年も変わらず、HTML・CSS・JavaScriptが大事！</p>
@@ -70,6 +70,7 @@ h1 {
       <li>世界的に見ると、VueよりもReactの方がかなり使用率が高い</li>
       <li>Reactが最も使用されるウェブフレームワークとして、jQueryを上回った</li>
     </ul>
+    <img src="/img/img-2.png" alt="">
   </div>
 </div>
 
@@ -106,7 +107,7 @@ p, ul {
 
 # 2021年のReact
 <h2 class="heading">今年の大きな動き</h2>
-<p>React自体の大きな変化や仕様変更は特になし。<br>フレームワークに関しては、Next.jsがJSフレームワークの覇権を握っていると言っても過言ではないような状況になっている。</p>
+<p>React自体の大きな変化や仕様変更は特になし。<br>フレームワークに関しては、<a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js</a>がJSフレームワークの覇権を握っていると言っても過言ではないような状況になっている。</p>
 
 <h2 class="heading">来年以降に予想される大きな動き</h2>
 <p>React Conf 2021で、メモ化を自動的に行うコンパイラが発表された。</p>
@@ -184,329 +185,169 @@ const memoizedCallback = useCallback(() => {
 # 2021年のVue
 <h2 class="heading">今年の大きな動き</h2>
 <ul>
-  <li>Vue3 Composition APIがだいぶ普及してきた</li>
-  <li>Nuxt3 Beta版のリリース</li>
+  <li>Vue3 Composition APIの普及。</li>
+  <li><a href="https://v3.nuxtjs.org/" target="_blank" rel="noopener noreferrer">Nuxt3</a> Beta版のリリース</li>
 </ul>
----
 
-# Vue3 Composition APIとは？
-<h2 class="heading">今年の大きな動き</h2>
-<ul>
-  <li>Vue3 Composition APIがだいぶ普及してきた</li>
-  <li>Nuxt3 Beta版のリリース</li>
-</ul>
----
-
-# Nuxt3のすごいところ
----
-
-# どのホスティングサービスがおすすめ！？
----
-
-# ホスティングサービスの話
-<p></p>
----
-
-# まとめ
-<p></p>
-
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
+<h2 class="heading">来年以降に予想される大きな動き</h2>
+<p>Nuxt3の安定板がリリースされたら、Vue界隈が盛り上がりそう</p>
+<img src="https://pbs.twimg.com/profile_images/1438501794754142212/_SXc-Z_h_400x400.jpg" alt="">
+<span>引用: NuxtJS公式Twitter</span>
 
 <style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
+.heading {
+  font-size: 26px !important;
+  margin-top: 0;
+  margin-bottom: 10px !important;
+  line-height: 1.2 !important;
 }
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
+img {
+  display: block;
+  max-width: 180px; 
+  height: auto;
 }
 </style>
 
 ---
 
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
+# Vue3 Composition APIとは？
+<p>Composition APIとは、2020年の9月頃にVue3に追加されたコンポーネント設計を行うための新機能のこと。</p>
+<p>従来の書き方（Options API）と比べると、TypeScriptの型の恩恵を受けやすくなったり、ビューとロジックを切り離せるようになったことで、ロジックの再利用がしやすくなったという特徴がある。</p>
 
 ---
-class: px-20
----
 
-# Themes
+# Options API
+```vue
+<template>
+  <button @click="increment">Counter</button>
+  <p>{{ count }}</p>
+</template>
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
+<script>
+export default {
+  data() {
+    return {
+      count: 0,
+    }
+  },
+  methods: {
+    increment () {
+      this.count++;
+    }
+  },
 }
 </script>
+```
 
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
+---
 
-[Learn More](https://sli.dev/guide/animations.html#motion)
+# Composition API
+```vue
+<template>
+  <button @click="increment">Counter</button>
+  <p>{{ count }}</p>
+</template>
 
+<script>
+import { defineComponent, ref } from 'vue';
+
+export default defineComponent({
+  setup() {
+    const count = ref(0);
+
+    const increment = () => count.value++;
+
+    return {
+      count,
+      increment,
+    };
+  },
+});
+</script>
+```
+
+---
+
+# Composition API
+```ts
+import { ref } from 'vue';
+
+export const useCounter = () => {
+  const count = ref(0);
+  const increment = () => count.value++;
+
+  return {
+    counter,
+    increment,
+  }
+}
+```
+
+---
+
+# Composition API
+```vue
+<template>
+  <button @click="increment">Counter</button>
+  <p>{{ count }}</p>
+</template>
+
+<script>
+import { defineComponent, ref } from 'vue';
+import { useCounter } from "~/hooks/useCounter";
+
+export default defineComponent({
+  setup() {
+    const { count, increment } = useCounter();
+
+    return {
+      count,
+      increment,
+    };
+  },
+});
+</script>
+```
+<div v-click></div>
+<div v-after>Options APIと比べてコードがシンプルで読みやすくなる！</div>
+
+---
+
+# Nuxt3の特徴
+<ol>
+  <li>セットアップが2系に比べてだいぶ楽になった。（create-nuxt-app時の質問攻めが無くなった🎉）</li>
+  <li>TypeScript・Composition API標準対応。</li>
+  <li>Nitroと呼ばれる新しいサーバーサイドエンジンを導入することで、API Routes・ISRの使用が可能に。</li>
+  <li>動的ルーティングの指定方法や、ディレクトリ構成などがNext.jsに近くなった</li>
+</ol>
+<a href="https://zenn.dev/ytr0903/articles/d0a91f6180d34e" target="_blank" rel="noopener noreferrer">https://zenn.dev/ytr0903/articles/d0a91f6180d34e</a>
+
+---
+
+# ホスティングサービスの話
+<p>2021年は、ホスティングサービスの躍進が目立った</p>
+<h2>ホスティングサービスとは？</h2>
+<p>事業者の所有するサーバの一部をインターネット経由で貸し出すサービスのこと。<br />フロントエンド界隈だと、HTMLのビルド時にNode.jsが使用できたり、Serverless Functionsなどが使用できるホスティングサービスが注目されている。</p>
+<div v-click></div>
+<div v-after>
+  <p>知識さえあればブログくらいなら、無料で運用を行うことも可能。</p>
+  <a href="https://karukichi-blog.netlify.app/" target="_blank" rel="noopener noreferrer">https://karukichi-blog.netlify.app/</a>
 </div>
 
 ---
 
-# LaTeX
+# 主要なホスティングサービス比較
+| サービス名  | ビルド速度   | 料金 | その他 |
+| --- | --- | --- | --- |
+| <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a> | かなり速い | 無料プランあり（PROだと$19 / member）| 表示速度、機能面は断トツ！ |
+| <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a> | 普通 | 無料プランあり（PROだと$20 / member）| 無料でも商用利用可能 |
+| <a href="https://pages.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare Pages</a> | 分からない | 無料プランあり（$20 ※チームの人数は関係なし）| Bandwidth無制限 かつ ホスティング可能なサイト数も無制限。|
+| <a href="https://aws.amazon.com/jp/amplify/" target="_blank" rel="noopener noreferrer">AWS Amplify</a> | かなり遅い | 従量課金制なのでなんとも言えない | 様々なAWSのサービスと連携させたりする場合はリソース管理が楽になる |
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
+<p>細かい比較記事</p>
+<a href="https://zenn.dev/catnose99/scraps/6780379210136f" target="_blank" rel="noopener noreferrer">https://zenn.dev/catnose99/scraps/6780379210136f</a>
 
 ---
 
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
-
----
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+# 
+<h1>ご静聴ありがとうございました。</h1>
