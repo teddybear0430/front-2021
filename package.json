@@ -11,5 +11,9 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
-  "name": "slidev"
+  "name": "slidev",
+  "devDependencies": {
+    "gh-pages": "^3.2.3",
+    "node-html-parser": "^5.2.0"
+  }
 }
